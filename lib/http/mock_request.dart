@@ -22,6 +22,7 @@ class MockRequest {
     return responseJson;
   }
 
+//  内部使用
   Map<String, String> map = {
     API.IN_THEATERS: 'in_theaters',
     API.COMING_SOON: 'coming_soon',

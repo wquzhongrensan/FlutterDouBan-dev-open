@@ -158,6 +158,7 @@ class MovieLongCommentsSubject {
 	String title;
 	int collectCount;
 	bool hasVideo;
+//	数据 nsarray
 	List<String> pubdates;
 	List<MovieLongCommantsSubjectCasts> casts;
 	String subtype;
@@ -166,8 +167,10 @@ class MovieLongCommentsSubject {
 	String mainlandPubdate;
 	String id;
 
+//	这种设计不是很好
 	MovieLongCommentsSubject({this.images, this.originalTitle, this.year, this.directors, this.rating, this.alt, this.title, this.collectCount, this.hasVideo, this.pubdates, this.casts, this.subtype, this.genres, this.durations, this.mainlandPubdate, this.id});
 
+//	空判断是null
 	MovieLongCommentsSubject.fromJson(Map<String, dynamic> json) {
 		images = json['images'] != null ? new MovieLongCommentsSubjectImages.fromJson(json['images']) : null;
 		originalTitle = json['original_title'];
@@ -398,6 +401,7 @@ class MovieLongCommentsSubjectCastsAvatars {
 		medium = json['medium'];
 	}
 
+//	相当于 ID  - dynamic
 	Map<String, dynamic> toJson() {
 		final Map<String, dynamic> data = new Map<String, dynamic>();
 		data['small'] = this.small;
